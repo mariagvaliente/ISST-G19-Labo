@@ -1,0 +1,24 @@
+body{
+    background-image: url("https://s3.eestatic.com/2019/01/01/espana/politica/Pablo_Iglesias-Pedro_Sanchez-Pablo_Casado-Albert_Rivera-Politica_365225888_111380036_1024x576.jpg");
+    background-color: rgba(0,0,0,0.4);
+    background-blend-mode: soft-light;
+    background-size: cover;
+}
+
+header{
+    height: 40%;
+    width: 100%;
+    padding: 1px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.tabla{
+    margin: auto;
+    width: 900px;
+    height: 300px;
+    text-align: center;
+}

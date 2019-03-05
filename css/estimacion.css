@@ -1,0 +1,14 @@
+div#body{
+    margin: auto;
+    margin-top: 60px;
+    width: 900px;
+    height: 300px;
+}
+
+
+.tabla{
+    margin: auto;
+    width: 900px;
+    height: 300px;
+    text-align: center;
+}

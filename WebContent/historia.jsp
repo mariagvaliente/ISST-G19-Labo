@@ -46,42 +46,36 @@
 <br>
 <br>
 
+<form action="${pageContext.request.contextPath}/AnnoConsultaServlet" method="post">
 <div class="tabla">
     <table class="table">
         <tr>
-            <td><a type="button" class="btn btn-default">1976</a></td>
-            <td><a type="button" class="btn btn-default" href="mapa.jsp">1977</a></td>
-            <td><button type="button" class="btn btn-default">1982</button></td>
+            <td><input type="submit" name="1976" value="1976" /></td>    
+            <td><input type="submit" name="1977" value="1977" /></td>         
+            <td><input type="submit" name="1982" value="1982" /></td>
         </tr>
         <tr>
-            <td><button type="button" class="btn btn-default">1986</button></td>
-            <td><button type="button" class="btn btn-default">1989</button></td>
-            <td><button type="button" class="btn btn-default">1993</button></td>
+            <td><input type="submit" name="1986" value="1986" /></td>    
+            <td><input type="submit" name="1989" value="1989" /></td>         
+            <td><input type="submit" name="1993" value="1993" /></td>
         </tr>
         <tr>
-            <td><button type="button" class="btn btn-default">1996</button></td>
-            <td><button type="button" class="btn btn-default">2000</button></td>
-            <td><button type="button" class="btn btn-default">2004</button></td>
+            <td><input type="submit" name="1996" value="1996" /></td>    
+            <td><input type="submit" name="2000" value="2000" /></td>         
+            <td><input type="submit" name="2004" value="2004" /></td>
         </tr>
-        <tr>
-            <td><button type="button" class="btn btn-default">2008</button></td>
-            <td><button type="button" class="btn btn-default">2011</button></td>
-            <td><button type="button" class="btn btn-default">2015</button></td>
+            <td><input type="submit" name="2008" value="2008" /></td>    
+            <td><input type="submit" name="2011" value="2011" /></td>         
+            <td><input type="submit" name="2015" value="2015" /></td>
         </tr>
         <tr>
             <td></td>
-            <td><button type="button" class="btn btn-default">2016</button></td>
+            <td><input type="submit" name="2016" value="2016" /></td>
             <td></td>
         </tr>
     </table>
+    </form>
 </div>
-
-
-
-
-
-
 
 </body>
 </html>
-

@@ -22,6 +22,36 @@
 
 	<shiro:user>
     Welcome back <shiro:principal />! Click <a href="LogoutServlet">here</a> to logout.
-</shiro:user>
+	<h2>Vista de <shiro:principal /> </h2>
+	
+	<h3>Crear TFG</h3>
+		<form action="CreateTFGServlet" method="post">
+			<p>
+				Nombre: <input type="text" name="name" />
+			</p>
+			<p>
+				Email: <input type="text" name="email" />
+			</p>
+			<p>
+				Password: <input type="password" name="password" />
+			</p>
+			<p>
+				Título: <input type="text" name="title" />
+			</p>
+			<p>
+				Tutor: 	<select name="advisor">
+			  			<option value="" disabled selected>Elija un tutor</option>
+  							<c:forEach items="${professor_list}" var="professori">
+    							<option value="${ professori.email}">
+      								${professori.name}-${professori.email}
+    							</option>
+  							</c:forEach>
+						</select>
+			</p>
+			<p>
+				<button type="submit">Crear TFG</button>
+			</p>
+		</form>
+	</shiro:user>
 </body>
 </html>

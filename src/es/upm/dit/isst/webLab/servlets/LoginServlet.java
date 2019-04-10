@@ -21,7 +21,7 @@ public class LoginServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		ProfessorDAO pdao = ProfessorDAOImplementation.getInstance();
 		req.getSession().setAttribute( "professor_list", pdao.readAll() );
-		getServletContext().getRequestDispatcher( "/LoginView.jsp" ).forward( req, resp );
+		getServletContext().getRequestDispatcher( "/index.jsp" ).forward( req, resp );
 	}
 	
 	@Override

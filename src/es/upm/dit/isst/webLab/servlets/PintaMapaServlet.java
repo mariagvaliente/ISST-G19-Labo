@@ -24,29 +24,51 @@ public class PintaMapaServlet extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		String objetoEleccionSelected = (String) req.getSession().getAttribute("anno");		
+		String anno = (String) req.getSession().getAttribute("anno");		
 		
-        System.out.println(objetoEleccionSelected);
+        System.out.println(anno);
         
 		
-		String cad="";
+		String codeProvincia= "";
 		
-		if(cad !="") {
-			cad = "";
+		if(codeProvincia !="") {
+			codeProvincia = "";
 		}else {
-	        cad =req.getParameter("code-provincia");
+			codeProvincia =req.getParameter("code-provincia");
+		}
+
+		if (codeProvincia==null) {
+			codeProvincia = "00";
 		}
         
-        String id_caso = objetoEleccionSelected + "-" + cad;
+	
+        String id_caso = anno + "-" + codeProvincia;
          
         
 		ResultadosDAO resultadoDAO = ResultadosDAOImplementation.getInstance();
 		List<Resultados> lista_resultados = new ArrayList<Resultados>();
+		List<Resultados> lista_resultados_top = new ArrayList<Resultados>();
+		List<Resultados> aux = new ArrayList<Resultados>();
+
+
+		
 		lista_resultados = resultadoDAO.partidosPorProvinciaAnno(id_caso);
 		
 		
-		req.getSession().setAttribute("lista_resultados", lista_resultados);
+		
+		for(int i = 1; i <= 52 ;i++ ){	
+		
+		aux = resultadoDAO.partidosPorProvinciaAnno(anno + "-" + i);
+		
+		lista_resultados_top.add(aux.get(0));	
 
+		}
+		
+		
+		req.getSession().setAttribute("lista_resultados", lista_resultados);
+		req.getSession().setAttribute("lista_resultados_top", lista_resultados_top);
+		
+	
 
         getServletContext().getRequestDispatcher("/mapa.jsp").forward(req, resp);
 
@@ -54,13 +76,7 @@ public class PintaMapaServlet extends HttpServlet {
 		System.out.println("El id_caso = " + id_caso);
 		System.out.println(lista_resultados.size());
 		System.out.println(lista_resultados.get(0).getPartido());
-		
-
-		
-		
-
-
- 
+		 
     	
 
 	}

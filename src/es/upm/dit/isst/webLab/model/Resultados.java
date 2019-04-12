@@ -19,12 +19,13 @@ public class Resultados implements Serializable {
 	public String partido;
 	public String escanos;
 	public String votos;
+	public String colors;
 
 	/*
 	 * @ManyToOne// poner id caso del resultado private Caso caso;
 	 */
 
-	public Resultados(){	
+	public Resultados(){	// falta constructor con las variables de resultado https://www.arquitecturajava.com/jpa-manytoone/
 
 	}
 
@@ -37,7 +38,7 @@ public class Resultados implements Serializable {
 	public void setId(String id) {
 		this.id = id;
 	}
-
+	
 
 	public String getId_caso() {
 		return id_caso;
@@ -78,7 +79,15 @@ public class Resultados implements Serializable {
 		this.votos = votos;
 	}
 
-	
-	
+
+	public String getColors() {
+		return colors;
+	}
+
+
+	public void setColors(String colors) {
+		this.colors = colors;
+	}
+
 
 }

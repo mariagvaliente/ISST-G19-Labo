@@ -12,7 +12,7 @@ public interface DAO<T, K> {
 	void modificar(T a);
 	
 	void eliminar(T a);
-	
+		
 	Collection<T> obtenerTodos();
 	
 	T obtener(K id);

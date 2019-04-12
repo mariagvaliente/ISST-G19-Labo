@@ -93,7 +93,7 @@ public class ResultadosDAOImplementation implements ResultadosDAO {
 			//operaciones
 			
 			partidosPorProvinciaAnno.addAll(
-				session.createQuery("FROM Resultados u WHERE  u.id_caso = :id_caso order by u.escanos DESC").setParameter("id_caso",id_caso).list()
+				session.createQuery("FROM Resultados u WHERE  u.id_caso = :id_caso order by u.votos DESC").setParameter("id_caso",id_caso).list()
 			);
 						
 			session.getTransaction().commit();
@@ -106,5 +106,8 @@ public class ResultadosDAOImplementation implements ResultadosDAO {
 		}
 		return partidosPorProvinciaAnno;
 	}
+	
+	
+	
 	
 }

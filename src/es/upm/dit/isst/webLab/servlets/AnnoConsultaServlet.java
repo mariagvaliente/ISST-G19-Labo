@@ -50,9 +50,12 @@ public class AnnoConsultaServlet extends HttpServlet {
         	anno = null;
         }
 
-    	req.getRequestDispatcher("mapa.jsp").forward(req, resp);
 
 		req.getSession().setAttribute("anno", anno);
+		
+		resp.sendRedirect(req.getContextPath() + "/PintaMapaServlet");
+
+    	//req.getRequestDispatcher("mapa.jsp").forward(req, resp);
 
 	
 	}

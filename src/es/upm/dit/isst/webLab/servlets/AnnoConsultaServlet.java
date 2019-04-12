@@ -20,10 +20,10 @@ public class AnnoConsultaServlet extends HttpServlet {
 	   
 		String anno;
 		
-        if (req.getParameter("1976") != null) {
-        	anno= "1976";
-        } else if (req.getParameter("1977") != null) {
+        if (req.getParameter("1977") != null) {
         	anno= "1977";
+        } else if (req.getParameter("1979") != null) {
+        	anno= "1979";
         } else if (req.getParameter("1982") != null) {
         	anno= "1982";
         } else if (req.getParameter("1986") != null) {

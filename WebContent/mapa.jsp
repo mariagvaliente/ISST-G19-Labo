@@ -34,8 +34,7 @@
 
 <body>
 
-	<h1 style="text-align: center;">Resultado de las elecciones de
-		1977</h1>
+	<h1 style="text-align: center;">Resultado de las elecciones</h1>
 
 	<form action="${pageContext.request.contextPath}/PintaMapaServlet"
 		method="post">
@@ -698,7 +697,7 @@
             2]);
 
         var options = {
-            title: "NÃºmero de votos",
+            title: "Número de votos",
             width: 600,
             height: 400,
             bar: {groupWidth: "95%"},

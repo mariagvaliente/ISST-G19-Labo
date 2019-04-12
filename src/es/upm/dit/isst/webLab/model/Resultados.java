@@ -24,7 +24,7 @@ public class Resultados implements Serializable {
 	 * @ManyToOne// poner id caso del resultado private Caso caso;
 	 */
 
-	public Resultados(){	// falta constructor con las variables de resultado https://www.arquitecturajava.com/jpa-manytoone/
+	public Resultados(){	
 
 	}
 

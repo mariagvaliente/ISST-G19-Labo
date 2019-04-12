@@ -50,8 +50,8 @@
 <div class="tabla">
     <table class="table">
         <tr>
-            <td><input type="submit" name="1976" value="1976" /></td>    
-            <td><input type="submit" name="1977" value="1977" /></td>         
+            <td><input type="submit" name="1977" value="1977" /></td>    
+            <td><input type="submit" name="1979" value="1979" /></td>         
             <td><input type="submit" name="1982" value="1982" /></td>
         </tr>
         <tr>

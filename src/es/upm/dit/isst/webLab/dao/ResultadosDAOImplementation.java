@@ -1,5 +1,6 @@
 package es.upm.dit.isst.webLab.dao;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 import org.hibernate.Session;
@@ -15,7 +16,7 @@ public class ResultadosDAOImplementation implements ResultadosDAO {
 			instancia = new ResultadosDAOImplementation();
 		return instancia;
 	}
-	
+
 	@Override
 	public void insertar(Resultados resultado) {
 		Session session = SessionFactoryService.get().openSession();
@@ -78,6 +79,32 @@ public class ResultadosDAOImplementation implements ResultadosDAO {
 		session.getTransaction().commit();
 		session.close();
 		return resultado;	
+	}
+	
+	@Override
+	public ArrayList <Resultados> partidosPorProvinciaAnno (String id_caso) {
+
+		ArrayList<Resultados> partidosPorProvinciaAnno = new ArrayList<>();
+		
+		Session session = SessionFactoryService.get().openSession();
+		try {
+			session.beginTransaction();
+
+			//operaciones
+			
+			partidosPorProvinciaAnno.addAll(
+				session.createQuery("FROM Resultados u WHERE  u.id_caso = :id_caso order by u.escanos DESC").setParameter("id_caso",id_caso).list()
+			);
+						
+			session.getTransaction().commit();
+		}
+		catch (Exception e){
+			System.out.println(e.getMessage());
+			
+		}finally {
+			session.close();
+		}
+		return partidosPorProvinciaAnno;
 	}
 	
 }

@@ -9,8 +9,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import es.upm.dit.isst.webLab.dao.CasoDAO;
-import es.upm.dit.isst.webLab.dao.CasoDAOImplementation;
 import es.upm.dit.isst.webLab.dao.ResultadosDAO;
 import es.upm.dit.isst.webLab.dao.ResultadosDAOImplementation;
 
@@ -24,7 +22,6 @@ public class AnnoConsultaServlet extends HttpServlet {
 		
         if (req.getParameter("1976") != null) {
         	anno= "1976";
-        	req.getRequestDispatcher("mapa.jsp").forward(req, resp);
         } else if (req.getParameter("1977") != null) {
         	anno= "1977";
         } else if (req.getParameter("1982") != null) {
@@ -52,9 +49,10 @@ public class AnnoConsultaServlet extends HttpServlet {
         } else {
         	anno = null;
         }
-	
-    
-        //resp.sendRedirect( "/PintaMapaServlet?anno=" +  anno);
+
+    	req.getRequestDispatcher("mapa.jsp").forward(req, resp);
+
+		req.getSession().setAttribute("anno", anno);
 
 	
 	}

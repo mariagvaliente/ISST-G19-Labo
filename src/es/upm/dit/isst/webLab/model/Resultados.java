@@ -14,16 +14,15 @@ import javax.persistence.ManyToOne;
 public class Resultados implements Serializable {
 
 	@Id
-	private String id;
-	private String id_caso;
-	private String partido;
-	private String escanos;
-	private String votos;
+	public String id;
+	public String id_caso;
+	public String partido;
+	public String escanos;
+	public String votos;
 
-
-	@ManyToOne// poner id caso del resultado
-	private Caso caso;
-
+	/*
+	 * @ManyToOne// poner id caso del resultado private Caso caso;
+	 */
 
 	public Resultados(){	// falta constructor con las variables de resultado https://www.arquitecturajava.com/jpa-manytoone/
 
@@ -79,15 +78,6 @@ public class Resultados implements Serializable {
 		this.votos = votos;
 	}
 
-
-	public Caso getCaso() {
-		return caso;
-	}
-
-
-	public void setCaso(Caso caso) {
-		this.caso = caso;
-	}
 	
 	
 

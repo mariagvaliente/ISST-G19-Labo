@@ -15,15 +15,14 @@ public class Resultados implements Serializable {
 
 	@Id
 	public String id;
-	public String id_caso;
 	public String partido;
 	public String escanos;
 	public String votos;
 	public String colors;
+	
 
-	/*
-	 * @ManyToOne// poner id caso del resultado private Caso caso;
-	 */
+	public String id_caso;
+
 
 	public Resultados(){	// falta constructor con las variables de resultado https://www.arquitecturajava.com/jpa-manytoone/
 

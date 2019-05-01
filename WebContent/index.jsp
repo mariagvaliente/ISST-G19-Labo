@@ -96,6 +96,35 @@
         </li>
         <li>
             <div class="overlay"></div>
+            <img src="images/cs.jpg" alt="Special 1">
+            <div class="container">
+                <div class="row"  style="float: left">
+                    <div class="col-md-5 col-lg-4">
+                        <div class="flex-caption visible-lg">
+                            <span class="price">¿Consulta?</span>
+                            <h3 class="title">Resultados históricos</h3>
+                            <p>Si desea ver los resultados electorales, clicke en el botón!</p>
+                            <a href="historia.jsp" class="slider-btn">CONSULTA</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row" style="float: right">
+                    <div class="col-md-5 col-lg-4">
+                        <div class="flex-caption2">
+                            <span class="price">¿LABORATORIO?</span>
+                            <h3 class="title">Realizar experimento</h3>
+                            <p>Si desea hacer un experimento, clicke en el botón.</p>
+                            <a href="seleccionley.jsp" class="slider-btn">LABORATORIO</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+        
+        <li>
+            <div class="overlay"></div>
             <img src="images/podemos.jpg" alt="Special 1">
             <div class="container">
                 <div class="row"  style="float: left">

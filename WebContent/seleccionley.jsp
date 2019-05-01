@@ -63,14 +63,14 @@
                                     <div class="home_content text-center">
                                         <div class="home_title"> Modifica la ley electoral</div>
                                         <div class="booking_form_container">
-                                            <form action="mapa2.jsp" class="booking_form">
+                                            <form action="historia2.jsp" class="booking_form">
                                                 <div class="booking_input_container d-flex flex-lg-row flex-column align-items-start justify-content-start">
                                                     <div></div>
                                                     <div></div>
                                                     <div></div>
                                                     <div></div>
                                                 </div>
-                                                <div><button class="booking_button trans_200">Compru√©balo</button></div>
+                                                <div><button class="booking_button trans_200">CompruÈbalo</button></div>
                                             </form>
                                         </div>
                                     </div>
@@ -97,46 +97,11 @@
 
     <!-- Features -->
 
-    <div class="features">
-        <div class="container">
-            <div class="row">
-
-                <!-- Icon Box -->
-                <div class="col-lg-4 icon_box_col">
-                    <div class="icon_box d-flex flex-column align-items-center justify-content-start text-center">
-                        <div class="icon_box_title"><h2>Estimaci√≥n de voto</h2></div>
-                        <div class="icon_box_text">
-                            <p>Podr·s consultar nuestras encuestas electorales para las elecciones generales.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Icon Box -->
-                <div class="col-lg-4 icon_box_col">
-
-                </div>
-
-                <!-- Icon Box -->
-                <div class="col-lg-4 icon_box_col">
-                    <div class="icon_box d-flex flex-column align-items-center justify-content-start text-center">
-                        <div class="icon_box_title"><h2>Modifica la Ley</h2></div>
-                        <div class="icon_box_text">
-                            <p>Podr·s modificar la Ley Electoral y ver como afecta a los resultados de las elecciones que elijas</p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
+  
 
 
     <!-- About -->
 
-
-    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-    Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 </div>
 </footer>
 </div>

@@ -40,20 +40,16 @@ public class PintaMapaServlet extends HttpServlet {
 		if (codeProvincia==null) {
 			codeProvincia = "00";
 		}
-        
-	
+        	
         String id_caso = anno + "-" + codeProvincia;
-         
+ 
         
 		ResultadosDAO resultadoDAO = ResultadosDAOImplementation.getInstance();
 		List<Resultados> lista_resultados = new ArrayList<Resultados>();
 		List<Resultados> lista_resultados_top = new ArrayList<Resultados>();
 		List<Resultados> aux = new ArrayList<Resultados>();
-
-
 		
 		lista_resultados = resultadoDAO.partidosPorProvinciaAnno(id_caso);
-		
 		
 		
 		for(int i = 1; i <= 52 ;i++ ){	

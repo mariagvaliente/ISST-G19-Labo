@@ -620,12 +620,6 @@
     </svg>
 						</div>
 					</form>
-
-
-
-
-
-
 				</div>
 			</td>
 
@@ -718,6 +712,7 @@
             height: 600,
             bar: {groupWidth: "95%"},
             legend: { position: "none" },
+            sliceVisibilityThreshold: 0
         };
         var chart = new google.visualization.BarChart(document.getElementById("barchart_values"));
         chart.draw(view, options);

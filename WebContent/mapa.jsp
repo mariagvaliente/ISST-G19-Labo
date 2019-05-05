@@ -651,8 +651,6 @@
 				</c:forEach>
 		]);
         
-
-
         // Set chart options
         var options = {
             'title' : 'Partidos según escaños', //title which will be shown right above the Google Pie Chart
@@ -660,18 +658,11 @@
             pieSliceText: 'label', //on mouse hover show label or name of the Country
             tooltip :  {showColorCode: true}, // whether to display color code for a Country on mouse hover
             'width' : 900, //width of the Google Pie Chart
-            'height' : 500, //height of the Google Pie Chart
-            
-	
-			
+            'height' : 500, //height of the Google Pie Chart			
             colors: [<c:forEach items="${lista_resultados}" var="entry">
 			 '${entry.colors}',
 				</c:forEach>],
- 
         };
-        
-        
-
         // Instantiate and draw our chart, passing in some options.
         var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
         chart.draw(data, options);
@@ -687,12 +678,10 @@
         	
     		['Partido', 'Votos', { role: "style" }  ],
     		<c:forEach items="${lista_resultados}" var="entry">
-    			[ '${entry.partido}', ${entry.votos}, '${entry.colors}'],
+    			[ '${entry.partido}', ${entry.votos}, '${entry.colors}'],    		
     				</c:forEach>
     		]);
-        	
-
-
+        
         var view = new google.visualization.DataView(data);
         view.setColumns([0, 1,
             { calc: "stringify",

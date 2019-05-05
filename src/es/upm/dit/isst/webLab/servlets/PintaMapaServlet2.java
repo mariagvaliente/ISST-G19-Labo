@@ -54,13 +54,9 @@ public class PintaMapaServlet2 extends HttpServlet {
 		List<Resultados> lista_resultados2 = new ArrayList<Resultados>();
 		List<Resultados> lista_resultados_top2 = new ArrayList<Resultados>();
 
-
-
 		SaintLey ley = new SaintLey();
 
-
 		lista_resultados = resultadoDAO.partidosPorProvinciaAnno(id_caso);
-
 
 		for(int i = 1; i <= 52 ;i++ ){	
 
@@ -72,7 +68,6 @@ public class PintaMapaServlet2 extends HttpServlet {
 
 		req.getSession().setAttribute("lista_resultados", lista_resultados);
 		req.getSession().setAttribute("lista_resultados_top", lista_resultados_top);
-		
 		
 		ArrayList<Integer>  scannosSaint = ley.calculaScannosSaintLague(lista_resultados);
 		ArrayList<String> partidosSaint =  ley.calculaPartidoSaintLague(lista_resultados);
@@ -88,7 +83,6 @@ public class PintaMapaServlet2 extends HttpServlet {
 			System.out.println("Esto son lo que queremos " + lista_resultados2.get(i).escanos);
 			System.out.println("Esto son lo que queremos " + lista_resultados2.get(i).partido);
 
-			
 		}
 
 		
@@ -99,10 +93,6 @@ public class PintaMapaServlet2 extends HttpServlet {
 
 		getServletContext().getRequestDispatcher("/mapa2.jsp").forward(req, resp);
 
-
-		System.out.println("El id_caso = " + id_caso);
-		System.out.println(lista_resultados.size());
-		System.out.println(lista_resultados.get(0).getPartido());
 
 
 

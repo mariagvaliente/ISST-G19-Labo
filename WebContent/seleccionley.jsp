@@ -36,7 +36,7 @@
                                     <div class="home_content text-center">
                                         <div class="home_title"> Estimación de votos</div>
                                         <div class="booking_form_container">
-                                            <form action="estimacion.jsp" class="booking_form">
+                                            <form action="ConsultaEncuesta" class="booking_form">
                                                 <div class="booking_input_container d-flex flex-lg-row flex-column align-items-start justify-content-start">
                                                     <div></div>
                                                     <div></div>
@@ -94,6 +94,9 @@
 
         </div>
     </div>
+    
+    
+    
 
     <!-- Features -->
 

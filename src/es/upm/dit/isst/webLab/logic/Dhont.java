@@ -5,13 +5,13 @@ import java.util.List;
 
 import es.upm.dit.isst.webLab.model.Resultados;
 
-public class SaintLey {
+public class Dhont {
 
-	public SaintLey () {
+	public Dhont () {
 
 	}
 
-	public ArrayList<Integer> calculaScannosSaintLague (List<Resultados> listaresultados) {
+	public ArrayList<Integer> calculaScannosDhont (List<Resultados> listaresultados) {
 
 		int escannosTotal = 0;
 		int [] numeroVotosA = new int[listaresultados.size()];
@@ -35,7 +35,7 @@ public class SaintLey {
 
 		for (int i = 0 ;  i < escannosTotal; i++) {
 			for (int k = 0 ; k < numeroVotosA.length; k++) {
-				int aux = numeroVotosA[k]/(2 * escannosRepartidosA[k]+1);
+				int aux = numeroVotosA[k]/(escannosRepartidosA[k]+1);
 				operacionA[k] = aux;
 			}
 
@@ -61,12 +61,21 @@ public class SaintLey {
 
 	}
 
-	public ArrayList<String> calculaPartidoSaintLague (List<Resultados> listaresultados) {
+	public ArrayList<String> calculaPartidoDhont (List<Resultados> listaresultados) {
 		ArrayList<String> al = new ArrayList<String>();
 		for (int i = 0 ; i < listaresultados.size(); i++){
 			al.add(listaresultados.get(i).partido);
 		}
-		
+
+		return al;
+	}
+	
+	public ArrayList<String> calculaColorsDhont (List<Resultados> listaresultados) {
+		ArrayList<String> al = new ArrayList<String>();
+		for (int i = 0 ; i < listaresultados.size(); i++){
+			al.add(listaresultados.get(i).colors);
+		}
+
 		return al;
 	}
 }

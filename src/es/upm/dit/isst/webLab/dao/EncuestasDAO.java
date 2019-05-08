@@ -20,7 +20,4 @@ public interface EncuestasDAO {
 	
 	ArrayList<Encuestas> obtenerTodos();
 
-
-
-
 }

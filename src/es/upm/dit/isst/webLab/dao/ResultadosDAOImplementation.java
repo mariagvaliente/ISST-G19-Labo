@@ -90,9 +90,6 @@ public class ResultadosDAOImplementation implements ResultadosDAO {
 		Session session = SessionFactoryService.get().openSession();
 		try {
 			session.beginTransaction();
-
-			//operaciones
-			
 			partidosPorProvinciaAnno.addAll(
 				session.createQuery("FROM Resultados u WHERE  u.id_caso = :id_caso order by u.votos DESC").setParameter("id_caso",id_caso).list()
 			);
@@ -109,6 +106,25 @@ public class ResultadosDAOImplementation implements ResultadosDAO {
 	}
 	
 	
-	
+	public Resultados getEscanosPartido(String partido, String id_caso) {
+		ArrayList<Resultados> partidosPorProvinciaAnno = new ArrayList<>();
+		
+		Session session = SessionFactoryService.get().openSession();
+		try {
+			session.beginTransaction();
+			partidosPorProvinciaAnno.addAll(
+				session.createQuery("FROM Resultados u WHERE  u.id_caso = :id_caso and u.partido = :partido").setParameter("id_caso",id_caso).setParameter("partido",partido).list()
+			);
+						
+			session.getTransaction().commit();
+		}
+		catch (Exception e){
+			System.out.println(e.getMessage());
+			
+		}finally {
+			session.close();
+		}
+		return partidosPorProvinciaAnno.get(0);
+	}
 	
 }

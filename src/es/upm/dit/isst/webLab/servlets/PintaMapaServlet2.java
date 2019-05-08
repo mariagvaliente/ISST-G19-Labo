@@ -26,16 +26,12 @@ public class PintaMapaServlet2 extends HttpServlet {
 
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-		String anno = (String) req.getSession().getAttribute("anno");		
-
-		System.out.println(anno);
-
-
+		String anno = (String) req.getSession().getAttribute("anno");				
 		String codeProvincia= "";
-
+		
 		if(codeProvincia !="") {
 			codeProvincia = "";
-		}else {
+		} else {
 			codeProvincia =req.getParameter("code-provincia");
 		}
 
@@ -43,14 +39,15 @@ public class PintaMapaServlet2 extends HttpServlet {
 			codeProvincia = "00";
 		}
 
-
 		String id_caso = anno + "-" + codeProvincia;
 
-
 		ResultadosDAO resultadoDAO = ResultadosDAOImplementation.getInstance();
+		// Ley d'Hont
 		List<Resultados> lista_resultados = new ArrayList<Resultados>();
 		List<Resultados> lista_resultados_top = new ArrayList<Resultados>();
+		
 		List<Resultados> aux = new ArrayList<Resultados>();
+		// Ley Saint Lague
 		List<Resultados> lista_resultados2 = new ArrayList<Resultados>();
 		List<Resultados> lista_resultados_top2 = new ArrayList<Resultados>();
 
@@ -59,43 +56,34 @@ public class PintaMapaServlet2 extends HttpServlet {
 		lista_resultados = resultadoDAO.partidosPorProvinciaAnno(id_caso);
 
 		for(int i = 1; i <= 52 ;i++ ){	
-
 			aux = resultadoDAO.partidosPorProvinciaAnno(anno + "-" + i);
-
 			lista_resultados_top.add(aux.get(0));	
 
 		}
 
 		req.getSession().setAttribute("lista_resultados", lista_resultados);
 		req.getSession().setAttribute("lista_resultados_top", lista_resultados_top);
-		
+
 		ArrayList<Integer>  scannosSaint = ley.calculaScannosSaintLague(lista_resultados);
 		ArrayList<String> partidosSaint =  ley.calculaPartidoSaintLague(lista_resultados);
-		
+
 		for(int i = 0; i < scannosSaint.size() ;i++ ) {
-			
+
 			Resultados resultado = new Resultados();
 			resultado.setPartido(partidosSaint.get(i));
 			resultado.setEscanos(Integer.toString(scannosSaint.get(i)));
-			
+
 			lista_resultados2.add(resultado);
-			
-			System.out.println("Esto son lo que queremos " + lista_resultados2.get(i).escanos);
-			System.out.println("Esto son lo que queremos " + lista_resultados2.get(i).partido);
+
+			// System.out.println("Esto son lo que queremos " + lista_resultados2.get(i).escanos);
+			// System.out.println("Esto son lo que queremos " + lista_resultados2.get(i).partido);
 
 		}
 
-		
-		
 		req.getSession().setAttribute("lista_resultados2", lista_resultados2);
 		req.getSession().setAttribute("lista_resultados_top2", lista_resultados_top2);
 
-
 		getServletContext().getRequestDispatcher("/mapa2.jsp").forward(req, resp);
-
-
-
-
 	}
 
 

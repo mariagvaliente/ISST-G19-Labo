@@ -18,7 +18,7 @@ public class AnnoConsultaServlet2 extends HttpServlet{
 	
 	
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		   
+
 		String anno;
 		
         if (req.getParameter("1977") != null) {
@@ -56,7 +56,6 @@ public class AnnoConsultaServlet2 extends HttpServlet{
 		
 		resp.sendRedirect(req.getContextPath() + "/PintaMapaServlet2");
 
-    	//req.getRequestDispatcher("mapa.jsp").forward(req, resp);
 	}
 
 }

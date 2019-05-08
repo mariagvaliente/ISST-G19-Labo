@@ -24,8 +24,7 @@ public class Resultados implements Serializable {
 	public String id_caso;
 
 
-	public Resultados(){	// falta constructor con las variables de resultado https://www.arquitecturajava.com/jpa-manytoone/
-
+	public Resultados(){	
 	}
 
 

@@ -32,8 +32,7 @@ public class Encuestas implements Serializable{
 	public String COM;
 
 	
-	public Encuestas(){	// falta constructor con las variables de resultado https://www.arquitecturajava.com/jpa-manytoone/
-
+	public Encuestas(){	
 	}
 
 

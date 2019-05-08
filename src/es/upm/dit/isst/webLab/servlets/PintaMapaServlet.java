@@ -20,17 +20,14 @@ import es.upm.dit.isst.webLab.model.Resultados;
 
 @WebServlet("/PintaMapaServlet")
 public class PintaMapaServlet extends HttpServlet {
-    private static final long serialVersionUID = 1L;
-	
+	private static final long serialVersionUID = 1L;
+
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
+
 		String anno = (String) req.getSession().getAttribute("anno");		
-		
-        System.out.println(anno);
-        
-		
+
 		String codeProvincia= "";
-		
+
 		if(codeProvincia !="") {
 			codeProvincia = "";
 		}else {
@@ -40,40 +37,25 @@ public class PintaMapaServlet extends HttpServlet {
 		if (codeProvincia==null) {
 			codeProvincia = "00";
 		}
-        	
-        String id_caso = anno + "-" + codeProvincia;
- 
-        
+
+		String id_caso = anno + "-" + codeProvincia;
 		ResultadosDAO resultadoDAO = ResultadosDAOImplementation.getInstance();
 		List<Resultados> lista_resultados = new ArrayList<Resultados>();
 		List<Resultados> lista_resultados_top = new ArrayList<Resultados>();
 		List<Resultados> aux = new ArrayList<Resultados>();
-		
 		lista_resultados = resultadoDAO.partidosPorProvinciaAnno(id_caso);
 		
-		
 		for(int i = 1; i <= 52 ;i++ ){	
-		
-		aux = resultadoDAO.partidosPorProvinciaAnno(anno + "-" + i);
-		
-		lista_resultados_top.add(aux.get(0));	
-
+			aux = resultadoDAO.partidosPorProvinciaAnno(anno + "-" + i);
+			lista_resultados_top.add(aux.get(0));	
 		}
-		
 		
 		req.getSession().setAttribute("lista_resultados", lista_resultados);
 		req.getSession().setAttribute("lista_resultados_top", lista_resultados_top);
-		
-	
-
-        getServletContext().getRequestDispatcher("/mapa.jsp").forward(req, resp);
-
- 
+		getServletContext().getRequestDispatcher("/mapa.jsp").forward(req, resp);
+		/*
 		System.out.println("El id_caso = " + id_caso);
 		System.out.println(lista_resultados.size());
-		System.out.println(lista_resultados.get(0).getPartido());
-		 
-    	
-
+		System.out.println(lista_resultados.get(0).getPartido());*/
 	}
 }

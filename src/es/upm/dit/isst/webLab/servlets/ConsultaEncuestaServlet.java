@@ -17,7 +17,7 @@ import es.upm.dit.isst.webLab.dao.EncuestasDAOImplementation;
 import es.upm.dit.isst.webLab.model.Encuestas;
 import es.upm.dit.isst.webLab.logic.SaintLey;
 
-@WebServlet("/ConsultaEncuesta")
+@WebServlet("/ConsultaEncuestaServlet")
 public class ConsultaEncuestaServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
@@ -29,13 +29,14 @@ public class ConsultaEncuestaServlet extends HttpServlet {
 		req.getSession().setAttribute("lista_encuestas", lista_encuestas);
 		getServletContext().getRequestDispatcher("/estimacion.jsp").forward(req, resp);
 	}
-	
-	
+
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {	
 		EncuestasDAO encuestasDAO = EncuestasDAOImplementation.getInstance();
 		List<Encuestas> resultado = new ArrayList<Encuestas>();
 		resultado = encuestasDAO.partidosPorEncuestas(Integer.parseInt(req.getParameter("ConsultaEncuesta")));	
 		req.getSession().setAttribute("resultado", resultado.get(0));
-		resp.sendRedirect(req.getContextPath() + "/estimacion.jsp");
+		getServletContext().getRequestDispatcher("/estimacion.jsp").forward(req, resp);
 	}
 }
+
+

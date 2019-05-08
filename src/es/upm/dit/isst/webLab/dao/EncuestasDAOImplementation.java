@@ -64,12 +64,12 @@ public class EncuestasDAOImplementation implements EncuestasDAO {
 
 	@Override
 	public  ArrayList <Encuestas>  obtenerTodos() {
+		
 		ArrayList<Encuestas> encuestas = new ArrayList<>();
 		Session session = SessionFactoryService.get().openSession();
 		try {
 			session.beginTransaction();
-			//operaciones
-			encuestas.addAll(
+			encuestas.addAll( 
 					session.createQuery("FROM Encuestas").list()
 				);
 			session.getTransaction().commit();
@@ -89,7 +89,6 @@ public class EncuestasDAOImplementation implements EncuestasDAO {
 		Session session = SessionFactoryService.get().openSession();
 		try {
 			session.beginTransaction();
-			//operaciones
 			partidosPorEncuestas.addAll(
 				session.createQuery("FROM Encuestas u WHERE u.id = :id ").setParameter("id",id).list()
 			);

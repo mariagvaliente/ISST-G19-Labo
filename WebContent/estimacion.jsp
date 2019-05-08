@@ -24,9 +24,12 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
 	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
 	crossorigin="anonymous">
+	
 
 <html>
 <head>
+
+
 
 <script type="text/javascript"
 	src="https://www.gstatic.com/charts/loader.js"></script>
@@ -107,7 +110,8 @@
 </head>
 <body>
 
-	<div class="form-row">
+
+	<div class="form-row" style="text-align:center; font-size:100%"">
 		<div class="form-group col-md-4">
 			<h2>Elige encuesta:</h2>
 			<form name='ConsultaEncuestaServlet' method="post">
@@ -117,7 +121,7 @@
 						<option value="${entry.id}">${entry.house}-${entry.date}</option>
 					</c:forEach>
 				</select>
-				<button type='submit' name='submit' class='btn btn-primary'>Seleccionar
+				<button type='submit' name='submit' class="btn btn-primary">Seleccionar
 				</button>				
 			</form>
 							<a href="index.jsp"><button class="btn btn-primary">Index</button></a>
@@ -128,16 +132,16 @@
 	</div>
 
 	<div style="text-align: center;">
-		<div class="tabla" style="text-align: center; margin-left: 10%">
+		<div class="tabla" style="text-align: center; margin-left: 10%;">
 			<table class="table" style="border: 5px solid transparent;">
 				<tr>
 					<td>
-						<div id="piechart" style="width: 40%; height: 500px; float: left"></div>
+						<div id="piechart" style="width: 40%; height: 800px; float: left"></div>
 					</td>
 
 					<td><c:if test="${resultado.getHouse()!= null}">
 
-							<table style="border: 15px solid transparent;">
+							<table style="border: 15px solid transparent; font-size: 200%">
 								<tr style="border: 15px solid transparent;">
 									<td>Encuesta realizada por ${resultado.getHouse()}</td>
 								</tr>

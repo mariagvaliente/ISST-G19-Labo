@@ -19,9 +19,9 @@ public class Resultados implements Serializable {
 	public String escanos;
 	public String votos;
 	public String colors;
-	
-
 	public String id_caso;
+	public String provincia;
+
 
 
 	public Resultados(){	
@@ -51,8 +51,17 @@ public class Resultados implements Serializable {
 	public String getPartido() {
 		return partido;
 	}
+	
+	public String getProvincia() {
+		return provincia;
+	}
 
 
+
+	public void setProvincia(String partido) {
+		this.provincia = provincia;
+	}
+	
 	public void setPartido(String partido) {
 		this.partido = partido;
 	}

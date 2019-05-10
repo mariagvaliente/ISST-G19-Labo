@@ -82,6 +82,8 @@ public class PintaMapaServlet2 extends HttpServlet {
 
 		req.getSession().setAttribute("lista_resultados2", lista_resultados2);
 		req.getSession().setAttribute("lista_resultados_top2", lista_resultados_top2);
+		req.getSession().setAttribute("provincia", lista_resultados.get(0).provincia);
+
 
 		getServletContext().getRequestDispatcher("/mapa2.jsp").forward(req, resp);
 	}

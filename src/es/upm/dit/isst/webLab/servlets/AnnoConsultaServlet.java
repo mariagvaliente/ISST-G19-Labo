@@ -46,6 +46,8 @@ public class AnnoConsultaServlet extends HttpServlet {
 			anno= "2015";
 		} else if (req.getParameter("2016") != null) {
 			anno= "2016";
+		}else if (req.getParameter("2019") != null) {
+			anno= "2019";
 		} else {
 			anno = null;
 		}

@@ -39,29 +39,31 @@
 <body>
 
 	<h1 style="text-align: center;">Resultado de las elecciones de
-		${anno}</h1>
+		${anno} - ${provincia}</h1>
+
+
 
 
 	<center>
-		<form action="historia2.jsp">
-			<input type="submit" class="btn btn-primary" value="Cambiar año" />
-		</form>
+		<table>
+			<tr>
+				<td style="border: white 10px solid;">
+					<form action="historia2.jsp">
+						<input type="submit" class="btn btn-primary" value="Cambiar año" />
+					</form>
+				</td>
+
+				<td style="border: white 10px solid;"><a
+					href="PintaMapaServlet2?code-provincia=00"><button
+							class="btn btn-warning">Generales</button></a></td>
+				<td style="border: white 10px solid;"><a href="index.jsp"><button
+							class="btn btn-info">Index</button></a></td>
+
+			</tr>
+		</table>
+
 	</center>
-	<br />
-	<center>
 
-		<a href="PintaMapaServlet2?code-provincia=00"><button
-				class="btn btn-primary">Generales</button></a>
-
-	</center>
-
-	<br />
-
-	<center>
-
-		<a href="index.jsp"><button class="btn btn-primary">Index</button></a>
-
-	</center>
 
 	<table>
 		<tr>
@@ -675,8 +677,11 @@
         	
     		['Partido', 'Votos', { role: "style" }  ],
     		<c:forEach items="${lista_resultados}" var="entry">
-    			[ '${entry.partido}', ${entry.votos}, '${entry.colors}'],
-    				</c:forEach>
+				<c:if test="${entry.votos != 0}">
+				[ '${entry.partido}', ${entry.votos}, '${entry.colors}'],    		
+	
+				</c:if>    				
+			</c:forEach>
     		]);
         	
         var view = new google.visualization.DataView(data);

@@ -32,8 +32,6 @@ public class PactometroServlet extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {	
-
-		// para pintar el mapa
 		
 		String anno = "2016";
 		
@@ -161,6 +159,8 @@ public class PactometroServlet extends HttpServlet {
 		req.getSession().setAttribute("lista_resultados2", lista_resultados2); // Para el PieChart (escaños)
 		req.getSession().setAttribute("lista_resultados", lista_resultados); // Para el BarChart (votos)
 		req.getSession().setAttribute("lista_resultados_top", lista_resultados_top);
+		req.getSession().setAttribute("provincia", lista_resultados.get(0).provincia);
+
 		getServletContext().getRequestDispatcher("/mapa3.jsp").forward(req, resp);
 	}
 

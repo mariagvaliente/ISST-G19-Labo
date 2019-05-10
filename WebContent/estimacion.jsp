@@ -24,7 +24,7 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
 	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
 	crossorigin="anonymous">
-	
+
 
 <html>
 <head>
@@ -76,7 +76,7 @@
                     pieSliceText: 'label', //on mouse hover show label or name of the Country
                     tooltip :  {showColorCode: true}, // whether to display color code for a Country on mouse hover
                     'width' : 700, //width of the Google Pie Chart
-                    'height' : 500, //height of the Google Pie Chart
+                    'height' : 400, //height of the Google Pie Chart
                     colors: ['#3F67FE', '#FD0F22', '#8E30A5', '#FF9700', 
         				<c:if test="${resultado.getERC() != null}">
                     	'#FED60C', 
@@ -110,33 +110,46 @@
 </head>
 <body>
 
+	<center>
 
-	<div class="form-row" style="text-align:center; font-size:100%"">
-		<div class="form-group col-md-4">
-			<h2>Elige encuesta:</h2>
-			<form name='ConsultaEncuestaServlet' method="post">
-				<select requiered class="customInput" name="ConsultaEncuesta"
-					value="${entry.id}" class="form-control">
-					<c:forEach items="${lista_encuestas}" var="entry">
-						<option value="${entry.id}">${entry.house}-${entry.date}</option>
-					</c:forEach>
-				</select>
-				<button type='submit' name='submit' class="btn btn-primary">Seleccionar
-				</button>				
-			</form>
-							<a href="index.jsp"><button class="btn btn-primary">Index</button></a>
-			
+		<h2 style="font-weight: normal; line-height: 1; color: #777777;">Elige
+			encuesta:</h2>
+	</center>
 
-
-		</div>
 	</div>
+	</div>
+
+	<center>
+
+		<table>
+			<tr>
+				<td style="border: 7px solid transparent;">
+					<form name='ConsultaEncuestaServlet' method="post">
+						<select requiered class="customInput" name="ConsultaEncuesta"
+							value="${entry.id}" class="form-control">
+							<c:forEach items="${lista_encuestas}" var="entry">
+								<option value="${entry.id}">${entry.house}-${entry.date}</option>
+							</c:forEach>
+						</select>
+						<button type='submit' name='submit' class="btn btn-primary">Seleccionar
+						</button>
+					</form>
+				</td>
+				<td><a href="index.jsp"><button class="btn btn-primary">Index</button></a>
+
+				</td>
+			</tr>
+		</table>
+	</center>
+
+
 
 	<div style="text-align: center;">
 		<div class="tabla" style="text-align: center; margin-left: 10%;">
 			<table class="table" style="border: 5px solid transparent;">
 				<tr>
 					<td>
-						<div id="piechart" style="width: 40%; height: 800px; float: left"></div>
+						<div id="piechart" style="width: 40%; height: 100%; float: left"></div>
 					</td>
 
 					<td><c:if test="${resultado.getHouse()!= null}">
@@ -151,12 +164,34 @@
 								<tr style="border: 15px solid transparent;">
 									<td>Se han encuestado a ${resultado.getSample()} personas</td>
 								</tr>
+								<c:if test="${resultado.getTurnout() != null}">
+
+									<tr style="border: 15px solid transparent;">
+										<td>La participación será del ${resultado.getTurnout()}%</td>
+									</tr>
+								</c:if>
+
 							</table>
 						</c:if></td>
 				</tr>
 			</table>
 		</div>
 	</div>
+
+	<div style="width: 33%; float: left; background-color: #e0e6e9">
+		<img class="gsi_logo" src="images/logo_upm.png">
+	</div>
+
+	<div style="width: 34%; float: left; background-color: #e0e6e9">
+		<div style="text-align: center;">
+			<img sytle="heigth: 99%" class="gsi_logo" src="images/logdit.gif">
+		</div>
+	</div>
+
+	<div style="width: 33%; float: left; background-color: #e0e6e9">
+		<img style="float: right" class="gsi_logo" src="images/logo_etsit.png">
+	</div>
+
 </body>
 </html>
 

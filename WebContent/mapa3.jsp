@@ -43,20 +43,12 @@
 		${anno} - ${provincia}</h1>
 
 
-
-
 	<center>
 		<table>
 			<tr>
 				<td style="border: white 10px solid;">
-					<form action="historia2.jsp">
-						<input type="submit" class="btn btn-primary" value="Cambiar año" />
-					</form>
+					<form action="historia2.jsp"></form>
 				</td>
-
-				<td style="border: white 10px solid;"><a
-					href="PintaMapaServlet2?code-provincia=00"><button
-							class="btn btn-warning">Generales</button></a></td>
 				<td style="border: white 10px solid;"><a href="index.jsp"><button
 							class="btn btn-info">Index</button></a></td>
 
@@ -73,11 +65,12 @@
 			style="padding: 1em; margin: auto; text-align: left; float: left;">
 			<svg xmlns="http://www.w3.org/2000/svg"
 				xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
-				width="625px" height="571px" id="mapa_hispano" margin:auto; background-color:#99ffff;">
+				width="625px" height="571px" id="mapa_hispano"margin:auto; background-color:#99ffff;">
 							
 				
     <polygon fill="#660000"
 					points="175,534,175,535,178,538,179,538,181,540,182,540,184,542,186,542,187,543,188,543,189,544,190,544,191,545,192,545,193,546,195,546,196,547,197,547,198,548,199,548,200,549,201,549,203,551,204,551,205,552,206,552,207,553,208,553,209,554,210,554,212,556,213,556,214,557,215,557,216,558,217,558,219,560,220,560,221,561,222,561,223,562,225,562,226,563,228,563,229,564,231,564,232,565,237,565,238,564,241,564,242,563,244,563,245,562,247,562,248,561,249,561,250,560,251,560,252,559,253,559,254,558,261,558,262,559,281,559,282,558,285,558,286,557,289,557,290,556,291,556,292,555,294,555,295,554,296,554,297,553,308,553,309,552,311,552,312,551,314,551,315,550,317,550,318,549,319,549,320,548,326,548,327,549,329,549,330,550,332,550,333,551,335,551,336,552,337,552,338,553,340,553,341,554,342,554,343,555,344,555,346,557,347,557,348,558,349,558,350,559,351,559,352,560,353,560,354,561,355,561,356,562,358,562,359,563,360,563,361,564,363,564,364,565,366,565,367,566,369,566,370,567,372,567,373,568,376,568,111,568,112,567,112,565,114,563,114,562,115,561,115,560,116,559,116,558,117,557,117,556,118,555,118,554,120,552,120,551,121,550,121,549,123,547,123,546,125,544,125,543,128,540,129,540,131,538,132,538,133,537,134,537,135,536,136,536,137,535,138,535,139,534,142,534,143,533,144,533,145,532,147,532,148,531,149,531,150,530,152,530,153,529,154,529,155,528,156,528,157,527,159,527,160,526,162,526,163,525,164,525,165,526,167,526"></polygon>
+
 
 
     <a href="PactometroServlet?code-provincia=2">
@@ -623,6 +616,20 @@
 		<div id="chart_div"></div>
 	</div>
 
+	<div style="width: 33%; float: left; background-color: #e0e6e9">
+		<img class="gsi_logo" src="images/logo_upm.png">
+	</div>
+
+	<div style="width: 34%; float: left; background-color: #e0e6e9">
+		<div style="text-align: center;">
+			<img sytle="heigth: 99%" class="gsi_logo" src="images/logdit.gif">
+		</div>
+	</div>
+
+	<div style="width: 33%; float: left; background-color: #e0e6e9">
+		<img style="float: right" class="gsi_logo" src="images/logo_etsit.png">
+	</div>
+
 
 
 </body>
@@ -698,7 +705,7 @@
         var options = {
             title: "Número de votos",
             width: 800,
-            height: 600,
+            height: 700,
             bar: {groupWidth: "95%"},
             legend: { position: "none" },
         };

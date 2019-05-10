@@ -124,6 +124,11 @@ public class ResultadosDAOImplementation implements ResultadosDAO {
 		}finally {
 			session.close();
 		}
+		
+		System.out.println("el partido que se ha pasado como parametro es " + partido);
+		System.out.println("el idcaso que se ha pasado como parametro es " + id_caso);	
+		System.out.println(partidosPorProvinciaAnno.size());
+		
 		return partidosPorProvinciaAnno.get(0);
 	}
 	

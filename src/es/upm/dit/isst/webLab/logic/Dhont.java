@@ -70,6 +70,15 @@ public class Dhont {
 		return al;
 	}
 	
+	public ArrayList<String> provinciaPartidoDhont (List<Resultados> listaresultados) {
+		ArrayList<String> al = new ArrayList<String>();
+		for (int i = 0 ; i < listaresultados.size(); i++){
+			al.add(listaresultados.get(i).provincia);
+		}
+
+		return al;
+	}
+	
 	public ArrayList<String> calculaColorsDhont (List<Resultados> listaresultados) {
 		ArrayList<String> al = new ArrayList<String>();
 		for (int i = 0 ; i < listaresultados.size(); i++){

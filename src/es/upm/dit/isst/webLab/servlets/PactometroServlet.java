@@ -23,7 +23,7 @@ public class PactometroServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		String id_caso = "2016-28";
+		String id_caso = "2019-00";
 		ResultadosDAO resultadoDAO = ResultadosDAOImplementation.getInstance();
 		List<Resultados> lista_pactometro = new ArrayList<Resultados>();
 		lista_pactometro = resultadoDAO.partidosPorProvinciaAnno(id_caso);
@@ -33,12 +33,8 @@ public class PactometroServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {	
 		
-		String anno = "2016";
+		String anno = "2019";
 		
-		if (req.getSession().getAttribute("anno") != null) {
-			anno = (String) req.getSession().getAttribute("anno");		
-		}
-
 		String codeProvincia= "00";
 
 		if(req.getParameter("code-provincia") != null) {
@@ -73,7 +69,11 @@ public class PactometroServlet extends HttpServlet {
 
 		// añadimos los casos a a la lista
 		for(int i = 0; i< partidos.length; i++) {
+			// System.out.println("Esto es el valor de la length " + partidos.length);
+			// System.out.println("Esto es el valor de i " + i);
+			// System.out.println("Esto es el valor de partidos[i]" + partidos[i]);
 			lista_pactometro.add(partido.getEscanosPartido(partidos[i], id_caso));
+		
 		}
 
 		
@@ -98,7 +98,7 @@ public class PactometroServlet extends HttpServlet {
 		for(int i = 0; i< lista_pactometro.size(); i++) {
 			System.out.println(lista_pactometro.get(i).getPartido());
 		}*/
-		
+		String provincia = "";
 		int votos = 0;
 		int escanos = 0;
 		int primeraVez = 0;
@@ -118,6 +118,8 @@ public class PactometroServlet extends HttpServlet {
 			partidoFicticio.setEscanos(String.valueOf(escanos));
 			String id = lista_pactometro.get(i).getId();
 			partidoFicticio.setColors("#000000");
+			provincia = lista_pactometro.get(i).getProvincia();
+			partidoFicticio.setProvincia(lista_pactometro.get(i).getProvincia());
 		}
 		
 		int k = 0;
@@ -130,6 +132,7 @@ public class PactometroServlet extends HttpServlet {
 		
 		Dhont dhont = new Dhont();
 		
+		ArrayList<String>  provinciaSaint = dhont.provinciaPartidoDhont(lista_resultados);
 		ArrayList<Integer>  scannosSaint = dhont.calculaScannosDhont(lista_resultados);
 		ArrayList<String> partidosSaint =  dhont.calculaPartidoDhont(lista_resultados);
 		ArrayList<String> colorsSaint =  dhont.calculaColorsDhont(lista_resultados);
@@ -138,12 +141,11 @@ public class PactometroServlet extends HttpServlet {
 		for(int i = 0; i < scannosSaint.size() ;i++ ) {
 
 			Resultados resultado = new Resultados();
-			System.out.println(partidosSaint.get(i));
-			System.out.println(Integer.toString(scannosSaint.get(i)));
+//			System.out.println(partidosSaint.get(i));
+//			System.out.println(Integer.toString(scannosSaint.get(i)));
 			resultado.setPartido(partidosSaint.get(i));
 			resultado.setEscanos(Integer.toString(scannosSaint.get(i)));
 			resultado.setColors(colorsSaint.get(i));
-
 			lista_resultados2.add(resultado);
 
 			// System.out.println("Esto son lo que queremos " + lista_resultados2.get(i).escanos);
@@ -159,7 +161,9 @@ public class PactometroServlet extends HttpServlet {
 		req.getSession().setAttribute("lista_resultados2", lista_resultados2); // Para el PieChart (escaños)
 		req.getSession().setAttribute("lista_resultados", lista_resultados); // Para el BarChart (votos)
 		req.getSession().setAttribute("lista_resultados_top", lista_resultados_top);
-		req.getSession().setAttribute("provincia", lista_resultados.get(0).provincia);
+		
+		System.out.println(lista_resultados.get(0).provincia);
+		req.getSession().setAttribute("provincia", provincia);
 
 		getServletContext().getRequestDispatcher("/mapa3.jsp").forward(req, resp);
 	}

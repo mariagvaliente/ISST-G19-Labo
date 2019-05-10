@@ -106,7 +106,7 @@
 										<div class="home_content text-center">
 											<div class="home_title">Pactos</div>
 											<div class="booking_form_container">
-												<form action="PactometroServlet" class="booking_form">
+												<form action="PactometroServlet" class="booking_form" method="get">
 													<div
 														class="booking_input_container d-flex flex-lg-row flex-column align-items-start justify-content-start">
 														<div></div>
@@ -144,8 +144,21 @@
 			</div>
 		</div>
 	</div>
-	</footer>
+	
+	<div style="width: 33%; float: left; background-color: #e0e6e9">
+		<img class="gsi_logo" src="images/logo_upm.png">
 	</div>
+
+	<div style="width: 34%; float: left; background-color: #e0e6e9">
+		<div style="text-align: center;">
+			<img sytle="heigth: 99%" class="gsi_logo" src="images/logdit.gif">
+		</div>
+	</div>
+
+	<div style="width: 33%; float: left; background-color: #e0e6e9">
+		<img style="float: right" class="gsi_logo" src="images/logo_etsit.png">
+	</div>
+	
 	<script src="js/jquery-3.3.1.min.js"></script>
 	<script src="styles/bootstrap-4.1.2/popper.js"></script>
 	<script src="styles/bootstrap-4.1.2/bootstrap.min.js"></script>

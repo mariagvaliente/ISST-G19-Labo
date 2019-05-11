@@ -759,7 +759,7 @@
             pieSliceText: 'label', //on mouse hover show label or name of the Country
             tooltip :  {showColorCode: true}, // whether to display color code for a Country on mouse hover
             'width' : 700, //width of the Google Pie Chart
-            'height' : 600, //height of the Google Pie Chart
+            'height' : 500, //height of the Google Pie Chart
 		
             colors: [<c:forEach items="${lista_resultados}" var="entry">
 			 '${entry.colors}',

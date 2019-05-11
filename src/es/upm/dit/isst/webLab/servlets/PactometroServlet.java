@@ -162,7 +162,6 @@ public class PactometroServlet extends HttpServlet {
 		req.getSession().setAttribute("lista_resultados", lista_resultados); // Para el BarChart (votos)
 		req.getSession().setAttribute("lista_resultados_top", lista_resultados_top);
 		
-		System.out.println(lista_resultados.get(0).provincia);
 		req.getSession().setAttribute("provincia", provincia);
 
 		getServletContext().getRequestDispatcher("/mapa3.jsp").forward(req, resp);
